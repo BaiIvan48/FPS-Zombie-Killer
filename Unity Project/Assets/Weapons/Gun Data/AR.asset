@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93ba1db51eee6e4aafd07ac445a46eb, type: 3}
+  m_Name: AR
+  m_EditorClassIdentifier: 
+  GunName: Scar
+  WeaponType: 1
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 2176
+  ShootingRange: 70
+  FireRate: 2
+  Damage: 30
+  MagazineSize: 30
+  ReloadTime: 2.5
+  WeaponDefaultPosition: {x: 0.07, y: -0.13, z: 0.19}
+  WeaponDefaultRotation: {x: -0.00025120308, y: -0.00030437525, z: -0.000008803106, w: 0.9999999}
+  WeaponAimPosition: {x: 0.0001, y: -0.13, z: 0.1}
+  WeaponAimRotation: {x: 0, y: 0, z: 1.240131e-16, w: 1}
+  AimTransitionSpeed: 12
+  DefaultFOV: 60
+  AimFOV: 35
+  RecoilAmount: 2.5
+  RecoilResetSpeed: 6
+  BulletSpeed: 150
+  FireSound: {fileID: 8300000, guid: 054e17d3664ab6246a3ee0b78cabbbe1, type: 3}
+  EquipSound: {fileID: 0}
+  ReloadSound: {fileID: 8300000, guid: e07a6db62cc044f45b68de49a02c668f, type: 3}
+  FallOnGround: {fileID: 0}
+  PositionalSway: 0.005
+  RotationalSway: 1
+  SwaySmoothness: 5
+  BobbingSpeed: 2
+  BobbingAmount: 0.001
+  PositionalRecoilAmount: 0.01
+  RotationaRecoilAmount: 2
+  RecoilSmoothness: 20

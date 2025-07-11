@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 4874a0137c1e4d7418404f8c548df548
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bulletHolePrefab: {fileID: 8111386963647455477, guid: 88a46a3f3275563498fe1e6df5827ba8, type: 3}
+  - stoneDustPrefab: {fileID: 8388750875339930054, guid: cc71b7581ba40af4bb056b600ac0bc24, type: 3}
+  - stoneDebrisPrefab: {fileID: 7370855894883826337, guid: c15fff6e0dc82b9488daa35a6313499c, type: 3}
+  - stoneHitSound: {fileID: 8300000, guid: 66f68d53db693aa41b4703e91a236a1b, type: 3}
+  - metalDustPrefab: {fileID: 978372229890917853, guid: 3624f14a2ad8e1c4393a2569df3f94e4, type: 3}
+  - metalDebrisPrefab: {fileID: 720174713003560089, guid: afb2a2a7d2ad28345b19e4c139c55b24, type: 3}
+  - metalHitSound: {fileID: 8300000, guid: 9dbe89eff3da81d49b5d639a8aff1631, type: 3}
+  - woodDustPrefab: {fileID: 7732696904119216206, guid: 59d90a1f4e3cbfc44aca7f9cea8a7da4, type: 3}
+  - woodDebrisPrefab: {fileID: 6252706793028648370, guid: e36efcad1fdcb5740a876b47245ba401, type: 3}
+  - woodHitSound: {instanceID: 0}
+  - fleshDebrisPrefab: {fileID: 878567552466848772, guid: 42552f6f427f2db41bdbd46b8dd61bae, type: 3}
+  - fleshHitSound: {fileID: 8300000, guid: 4cc38288afefe604da8ba5e42af6e47f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
