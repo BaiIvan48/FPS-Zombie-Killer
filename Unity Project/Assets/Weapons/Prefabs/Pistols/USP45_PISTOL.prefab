@@ -240,8 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086449c5586b11a44beaf4da541ae02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: cd8b923317d91da4eb39866cfd20fc35, type: 2}
-  gunMuzzle: {fileID: 7058995768118968713}
+  GunData: {fileID: 11400000, guid: cd8b923317d91da4eb39866cfd20fc35, type: 2}
+  GunMuzzle: {fileID: 7058995768118968713}
   muzzleFlash: {fileID: 3742525752395506124}
   bulletTrailPrefab: {fileID: 7771317739538291619, guid: f60a7446f0499034fb3a930faaa49b94, type: 3}
 --- !u!65 &8340069904291574483

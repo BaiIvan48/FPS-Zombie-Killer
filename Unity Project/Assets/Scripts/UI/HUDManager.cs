@@ -11,39 +11,41 @@ public class HUDManager : MonoBehaviour
     public static HUDManager Instance { get; set; }
     
     [Header("Weapon and ammo")]
-    public TextMeshProUGUI currentAmmoUI;
-    public TextMeshProUGUI magazineAmmoUI;
-    public Image ammoTypeUI;
-    public Image activeWeaponUI;
-    public Sprite emptySlot;
+    public TextMeshProUGUI CurrentAmmoUI;
+    public TextMeshProUGUI MagazineAmmoUI;
+    public Image AmmoTypeUI;
+    public Image ActiveWeaponUI;
+    public Sprite EmptySlot;
 
     [Header("Health")]
-    public TextMeshProUGUI currentHealth;
-    public Slider healthSlider;
-    public Gradient healthGradient;
-    public Image healthFill;
+    public TextMeshProUGUI CurrentHealth;
+    public Slider HealthSlider;
+    public Gradient HealthGradient;
+    public Image HealthFill;
 
     [Header("Crosshair")]
-    public Image crosshair;
-    public Sprite pistolCrosshair;
-    public Sprite shotgunCrosshair;
-    public Sprite arCrosshair;
-    public Sprite smgCrosshair;
+    public Image Crosshair;
+    public Sprite PistolCrosshair;
+    public Sprite ShotgunCrosshair;
+    public Sprite ArCrosshair;
+    public Sprite SmgCrosshair;
 
-    [SerializeField]private FPSController player;
-    public Image gameOverImage;
-    public TextMeshProUGUI survivedWaves;
-    public Image winImage;
-    private Gun activeWeapon;
-    private Health playerHealth;
+    [SerializeField]
+    private FPSController _player;
+    public Image GameOverImage;
+    public TextMeshProUGUI SurvivedWaves;
+    public Image WinImage;
+    
+    private Gun _activeWeapon;
+    private Health _playerHealth;
 
-    private string ammoSpritesPath = "Weapons/UI/Ammo";
-    private string weaponIconsPath = "Weapons/UI/Icons";
+    private string _ammoSpritesPath = "Weapons/UI/Ammo";
+    private string _weaponIconsPath = "Weapons/UI/Icons";
 
     private Dictionary<string, Sprite> _ammoSprites;
     private Dictionary<string, Sprite> _weaponIcons;
 
-    public GameManager gameManager;
+    public GameManager GameManager;
 
     private void Awake()
     {
@@ -57,44 +59,44 @@ public class HUDManager : MonoBehaviour
         }
 
         _ammoSprites = new Dictionary<string, Sprite>();
-        foreach (var sp in Resources.LoadAll<Sprite>(ammoSpritesPath))
+        foreach (var sp in Resources.LoadAll<Sprite>(_ammoSpritesPath))
             _ammoSprites[sp.name] = sp;
 
         _weaponIcons = new Dictionary<string, Sprite>();
-        foreach (var sp in Resources.LoadAll<Sprite>(weaponIconsPath))
+        foreach (var sp in Resources.LoadAll<Sprite>(_weaponIconsPath))
             _weaponIcons[sp.name] = sp;
     }
 
     private void Start()
     {
-        if (player == null) return;
-        player.OnWeaponChanged += OnWeaponChanged;
-        OnWeaponChanged(player.CurrentWeapon);
+        if (_player == null) return;
+        _player.OnWeaponChanged += OnWeaponChanged;
+        OnWeaponChanged(_player.CurrentWeapon);
 
-        playerHealth = player.GetComponentInChildren<Health>();
-        if (playerHealth != null)
+        _playerHealth = _player.GetComponentInChildren<Health>();
+        if (_playerHealth != null)
         {
-            playerHealth.OnMaxHealthSet.AddListener(SetMaxHealth);
-            playerHealth.OnHealthChanged.AddListener(SetHealth);
-            playerHealth.OnDeath.AddListener(OnPlayerDeath);
+            _playerHealth.OnMaxHealthSet.AddListener(SetMaxHealth);
+            _playerHealth.OnHealthChanged.AddListener(SetHealth);
+            _playerHealth.OnDeath.AddListener(OnPlayerDeath);
         }
     }
 
     private void OnDestroy()
     {
-        if (player != null)
+        if (_player != null)
         {
-            player.OnWeaponChanged -= OnWeaponChanged;
-            if (activeWeapon != null)
-                activeWeapon.OnAimStateChanged -= OnAimChanged;
+            _player.OnWeaponChanged -= OnWeaponChanged;
+            if (_activeWeapon != null)
+                _activeWeapon.OnAimStateChanged -= OnAimChanged;
         }
         UnsubscribeAmmo();
 
-        if (playerHealth != null)
+        if (_playerHealth != null)
         {
-            playerHealth.OnMaxHealthSet.RemoveListener(SetMaxHealth);
-            playerHealth.OnHealthChanged.RemoveListener(SetHealth);
-            playerHealth.OnDeath.RemoveListener(OnPlayerDeath);
+            _playerHealth.OnMaxHealthSet.RemoveListener(SetMaxHealth);
+            _playerHealth.OnHealthChanged.RemoveListener(SetHealth);
+            _playerHealth.OnDeath.RemoveListener(OnPlayerDeath);
         }
     }
 
@@ -102,84 +104,84 @@ public class HUDManager : MonoBehaviour
     {
         UnsubscribeAmmo();
 
-        activeWeapon = newWeapon;
-        if (activeWeapon != null)
+        _activeWeapon = newWeapon;
+        if (_activeWeapon != null)
         {
-            UpdateAmmoUI(activeWeapon.GetCurrentAmmo, activeWeapon.GunData.MagazineSize);
-            ammoTypeUI.sprite = GetAmmoSprite(activeWeapon.GunData.WeaponType);
-            activeWeaponUI.sprite = GetWeaponIcon(activeWeapon.GunData.GunName);
-            activeWeapon.OnAmmoChanged += UpdateAmmoUI;
-            activeWeapon.OnAimStateChanged += OnAimChanged;
-            UpdateCrosshair(activeWeapon.GunData.WeaponType);
+            UpdateAmmoUI(_activeWeapon.GetCurrentAmmo, _activeWeapon.GunData.MagazineSize);
+            AmmoTypeUI.sprite = GetAmmoSprite(_activeWeapon.GunData.WeaponType);
+            ActiveWeaponUI.sprite = GetWeaponIcon(_activeWeapon.GunData.GunName);
+            _activeWeapon.OnAmmoChanged += UpdateAmmoUI;
+            _activeWeapon.OnAimStateChanged += OnAimChanged;
+            UpdateCrosshair(_activeWeapon.GunData.WeaponType);
         }
         else
         {
-            currentAmmoUI.text = "";
-            magazineAmmoUI.text = "";
-            ammoTypeUI.sprite = emptySlot;
-            activeWeaponUI.sprite = emptySlot;
-            crosshair.sprite = emptySlot;
+            CurrentAmmoUI.text = "";
+            MagazineAmmoUI.text = "";
+            AmmoTypeUI.sprite = EmptySlot;
+            ActiveWeaponUI.sprite = EmptySlot;
+            Crosshair.sprite = EmptySlot;
         }
 
     }
 
     private void UnsubscribeAmmo()
     {
-        if (activeWeapon != null)
-            activeWeapon.OnAmmoChanged -= UpdateAmmoUI;
+        if (_activeWeapon != null)
+            _activeWeapon.OnAmmoChanged -= UpdateAmmoUI;
     }
 
     private void UpdateAmmoUI(int current, int magazine)
     {
-        currentAmmoUI.text = current.ToString();
-        magazineAmmoUI.text = $"/{magazine}";
+        CurrentAmmoUI.text = current.ToString();
+        MagazineAmmoUI.text = $"/{magazine}";
     }
 
     private Sprite GetAmmoSprite(WeaponType type)
     {
         string ammoName = type.ToString() + "_Ammo";
         if (!_ammoSprites.TryGetValue(ammoName, out var sprite))
-            return emptySlot;
+            return EmptySlot;
         return sprite;
     }
 
     private Sprite GetWeaponIcon(string iconName)
     {
         if (string.IsNullOrEmpty(iconName) || !_weaponIcons.TryGetValue(iconName, out var sprite))
-            return emptySlot;
+            return EmptySlot;
         return sprite;
     }
 
     private void SetMaxHealth(float max)
     {
-        healthSlider.maxValue = max;
-        healthSlider.value = max;
-        healthFill.color = healthGradient.Evaluate(1f);
-        currentHealth.text = $"{max}|{max}";
+        HealthSlider.maxValue = max;
+        HealthSlider.value = max;
+        HealthFill.color = HealthGradient.Evaluate(1f);
+        CurrentHealth.text = $"{max}|{max}";
     }
 
     private void SetHealth(float current)
     {
-        healthSlider.value = current;
-        healthFill.color = healthGradient.Evaluate(healthSlider.normalizedValue);
-        currentHealth.text = $"{current}|{healthSlider.maxValue}";
+        HealthSlider.value = current;
+        HealthFill.color = HealthGradient.Evaluate(HealthSlider.normalizedValue);
+        CurrentHealth.text = $"{current}|{HealthSlider.maxValue}";
     }
 
     private void UpdateCrosshair(WeaponType type)
     {
         switch (type)   
         {
-            case WeaponType.Pistol: crosshair.sprite = pistolCrosshair; break;
-            case WeaponType.AR: crosshair.sprite = arCrosshair; break;
-            case WeaponType.SMG: crosshair.sprite = smgCrosshair; break;
-            case WeaponType.Shotgun: crosshair.sprite = shotgunCrosshair; break;
-            default: crosshair.sprite = pistolCrosshair; break;
+            case WeaponType.Pistol: Crosshair.sprite = PistolCrosshair; break;
+            case WeaponType.AR: Crosshair.sprite = ArCrosshair; break;
+            case WeaponType.SMG: Crosshair.sprite = SmgCrosshair; break;
+            case WeaponType.Shotgun: Crosshair.sprite = ShotgunCrosshair; break;
+            default: Crosshair.sprite = PistolCrosshair; break;
         }
     }
 
     private void OnPlayerDeath()
     {
-        int waves = gameManager.totalWavesCompleted;
+        int waves = GameManager.totalWavesCompleted;
         int currentHighScore = SaveLoadManager.Instance.LoadHighScoreW();
 
         if (waves > currentHighScore)
@@ -192,9 +194,9 @@ public class HUDManager : MonoBehaviour
             Debug.Log($"Waves survived: {waves}. Current high score: {currentHighScore}");
         }
 
-        survivedWaves.text = $"Survived Waves: {waves}";
+        SurvivedWaves.text = $"Survived Waves: {waves}";
 
-        player.GetComponent<InputManager>()?.ShowCursor();
+        _player.GetComponent<InputManager>()?.ShowCursor();
 
         StartCoroutine(HandleGameOverSequence());
     }
@@ -210,24 +212,24 @@ public class HUDManager : MonoBehaviour
 
     private void OnAimChanged(bool isAiming)
     {
-        crosshair.gameObject.SetActive(!isAiming);
+        Crosshair.gameObject.SetActive(!isAiming);
     }
 
     private IEnumerator FadeInGameOver(float duration)
     {
-        gameOverImage.gameObject.SetActive(true);
-        Color color = gameOverImage.color;
+        GameOverImage.gameObject.SetActive(true);
+        Color color = GameOverImage.color;
         float timer = 0f;
 
         while (timer < duration)
         {
             timer += Time.deltaTime;
             color.a = Mathf.Clamp01(timer / duration);
-            gameOverImage.color = color;
+            GameOverImage.color = color;
             yield return null;
         }
 
         color.a = 1f;
-        gameOverImage.color = color;
+        GameOverImage.color = color;
     }
 }

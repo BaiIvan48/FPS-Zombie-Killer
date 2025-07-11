@@ -821,12 +821,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36768704f8d1532408f3c36c622a024d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: 3ff1ae1e729c28d41886a3eae7c05c49, type: 2}
-  gunMuzzle: {fileID: 7661544906382034028}
+  GunData: {fileID: 11400000, guid: 3ff1ae1e729c28d41886a3eae7c05c49, type: 2}
+  GunMuzzle: {fileID: 7661544906382034028}
   muzzleFlash: {fileID: 3996486523938403082}
   bulletTrailPrefab: {fileID: 7771317739538291619, guid: f60a7446f0499034fb3a930faaa49b94, type: 3}
-  pelletCount: 8
-  spreadAngle: 12
+  PelletCount: 8
+  SpreadAngle: 12
 --- !u!65 &3521833381094804842
 BoxCollider:
   m_ObjectHideFlags: 0

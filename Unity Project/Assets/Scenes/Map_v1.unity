@@ -2645,6 +2645,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013149834228, guid: 6857ff1d3761e21479727f3b27cc8f68, type: 3}
   m_PrefabInstance: {fileID: 210468920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &223545552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 657858217229823776, guid: bf6b13071ccd4184e83333d54d10cf9f, type: 3}
+  m_PrefabInstance: {fileID: 6046697110845382756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &232023910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10584,26 +10595,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874f66c3b29912b4a9220afcdbcb79a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAmmoUI: {fileID: 502735302}
-  magazineAmmoUI: {fileID: 661633288}
-  ammoTypeUI: {fileID: 1121189002}
-  activeWeaponUI: {fileID: 1852141429}
-  emptySlot: {fileID: 21300000, guid: 9b8e9abac29041f41a46ee51fb697d8b, type: 3}
-  currentHealth: {fileID: 6233354689802872793}
-  healthSlider: {fileID: 336142968}
-  healthGradient:
+  CurrentAmmoUI: {fileID: 502735302}
+  MagazineAmmoUI: {fileID: 661633288}
+  AmmoTypeUI: {fileID: 1121189002}
+  ActiveWeaponUI: {fileID: 1852141429}
+  EmptySlot: {fileID: 21300000, guid: 9b8e9abac29041f41a46ee51fb697d8b, type: 3}
+  CurrentHealth: {fileID: 223545552}
+  HealthSlider: {fileID: 336142968}
+  HealthGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 0.99447536, g: 1, b: 0.4433961, a: 1}
+    key1: {r: 1, g: 0.922959, b: 0.14779866, a: 1}
     key2: {r: 1, g: 1, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 10362
-    ctime1: 39657
-    ctime2: 65535
+    ctime0: 0
+    ctime1: 33419
+    ctime2: 55987
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -10617,21 +10628,21 @@ MonoBehaviour:
     atime5: 0
     atime6: 0
     atime7: 0
-    m_Mode: 2
+    m_Mode: 0
     m_ColorSpace: -1
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  healthFill: {fileID: 578741263}
-  crosshair: {fileID: 562032441}
-  pistolCrosshair: {fileID: 21300000, guid: 764c7bde4ab673542880281181a5d49d, type: 3}
-  shotgunCrosshair: {fileID: 21300000, guid: 72390e18db6bcd740b572c209400ff09, type: 3}
-  arCrosshair: {fileID: 21300000, guid: c4ef3c9c443c2f143804f09229462c9a, type: 3}
-  smgCrosshair: {fileID: 21300000, guid: 36fe8b6a4dff68c459cce43768bb91f2, type: 3}
-  player: {fileID: 1165968107}
-  gameOverImage: {fileID: 872873218}
-  survivedWaves: {fileID: 1587218091}
-  winImage: {fileID: 0}
-  gameManager: {fileID: 575323638}
+  HealthFill: {fileID: 578741263}
+  Crosshair: {fileID: 562032441}
+  PistolCrosshair: {fileID: 21300000, guid: 764c7bde4ab673542880281181a5d49d, type: 3}
+  ShotgunCrosshair: {fileID: 21300000, guid: 72390e18db6bcd740b572c209400ff09, type: 3}
+  ArCrosshair: {fileID: 21300000, guid: c4ef3c9c443c2f143804f09229462c9a, type: 3}
+  SmgCrosshair: {fileID: 21300000, guid: 36fe8b6a4dff68c459cce43768bb91f2, type: 3}
+  _player: {fileID: 1165968107}
+  GameOverImage: {fileID: 872873218}
+  SurvivedWaves: {fileID: 31675503}
+  WinImage: {fileID: 698415264}
+  GameManager: {fileID: 575323638}
 --- !u!4 &779668415
 Transform:
   m_ObjectHideFlags: 0
@@ -16187,6 +16198,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: FleshHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cc38288afefe604da8ba5e42af6e47f, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: MetalHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dbe89eff3da81d49b5d639a8aff1631, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: StoneHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 66f68d53db693aa41b4703e91a236a1b, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: WoodDustPrefab
+      value: 
+      objectReference: {fileID: 7732696904119216206, guid: 59d90a1f4e3cbfc44aca7f9cea8a7da4, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: MetalDustPrefab
+      value: 
+      objectReference: {fileID: 978372229890917853, guid: 3624f14a2ad8e1c4393a2569df3f94e4, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: StoneDustPrefab
+      value: 
+      objectReference: {fileID: 8388750875339930054, guid: cc71b7581ba40af4bb056b600ac0bc24, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: BulletHolePrefab
+      value: 
+      objectReference: {fileID: 8111386963647455477, guid: 88a46a3f3275563498fe1e6df5827ba8, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: WoodDebrisPrefab
+      value: 
+      objectReference: {fileID: 6252706793028648370, guid: e36efcad1fdcb5740a876b47245ba401, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: FleshDebrisPrefab
+      value: 
+      objectReference: {fileID: 878567552466848772, guid: 42552f6f427f2db41bdbd46b8dd61bae, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: MetalDebrisPrefab
+      value: 
+      objectReference: {fileID: 720174713003560089, guid: afb2a2a7d2ad28345b19e4c139c55b24, type: 3}
+    - target: {fileID: 1852505797770357396, guid: 832099de37e91604bab2d21172385749, type: 3}
+      propertyPath: StoneDebrisPrefab
+      value: 
+      objectReference: {fileID: 7370855894883826337, guid: c15fff6e0dc82b9488daa35a6313499c, type: 3}
     - target: {fileID: 2769344901617787929, guid: 832099de37e91604bab2d21172385749, type: 3}
       propertyPath: _playerInput
       value: 
@@ -30479,17 +30534,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf6b13071ccd4184e83333d54d10cf9f, type: 3}
---- !u!114 &6233354689802872793 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7731756102351189333, guid: bf6b13071ccd4184e83333d54d10cf9f, type: 3}
-  m_PrefabInstance: {fileID: 6046697110845382756}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

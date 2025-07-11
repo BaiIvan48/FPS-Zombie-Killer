@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunData: {fileID: 11400000, guid: 4fc117b7e7e48014ab58bb95c7c6a4da, type: 2}
-  GunMuzzle: {fileID: 0}
+  GunMuzzle: {fileID: 7683466845661111154}
   muzzleFlash: {fileID: 2276894883943921918}
   bulletTrailPrefab: {fileID: 7771317739538291619, guid: f60a7446f0499034fb3a930faaa49b94, type: 3}
   IsBurstMode: 0

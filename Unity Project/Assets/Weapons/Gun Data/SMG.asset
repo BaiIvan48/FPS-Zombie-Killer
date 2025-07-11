@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93ba1db51eee6e4aafd07ac445a46eb, type: 3}
   m_Name: SMG
   m_EditorClassIdentifier: 
-  GunName: Skorpion
+  GunName: SKORPION
   WeaponType: 2
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 2184
   ShootingRange: 50
   FireRate: 15
   Damage: 12

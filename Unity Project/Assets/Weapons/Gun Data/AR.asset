@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93ba1db51eee6e4aafd07ac445a46eb, type: 3}
   m_Name: AR
   m_EditorClassIdentifier: 
-  GunName: Scar
+  GunName: SCAR
   WeaponType: 1
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 2184
   ShootingRange: 70
   FireRate: 2
   Damage: 30

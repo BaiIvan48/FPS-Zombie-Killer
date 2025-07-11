@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93ba1db51eee6e4aafd07ac445a46eb, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  GunName: Shotgun
+  GunName: REMINGSTON870
   WeaponType: 3
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 2184
   ShootingRange: 25
   FireRate: 1.2
   Damage: 20
