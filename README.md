@@ -1,9 +1,13 @@
 FPS Zombie Wave Killer
 
+(currently in development)
+
+Link for the Game >>>>>>>>>>>>>>>>>>>>> https://drive.google.com/drive/folders/1XeEVvndmNvUF2A_ASDJNT-ViazsZQ_1g?usp=sharing
+
+Link for the Unity Project >>>>>>>>>>>> https://drive.google.com/drive/folders/1f9zVIzCJGnASIPHc2EilFgViO_2AZBjK?usp=sharing
 
 
 FPS Zombie Wave Killer is a first-person shooter survival game built in Unity, where the player must fight off increasingly difficult waves of zombies. You must stay alive as long as possible by choosing carefully your weapons.
-
 
 
 🎮 Gameplay
@@ -93,20 +97,15 @@ Save System - PlayerPrefs-based save system to keep track of the highest wave co
 🚀 Getting Started
 
 
-
-Clone the repository
-
-
-
 A) If you want only the game
 
 
 
-Open the "Game" folder(you ca delete the rest)
+Open the "Game" link
 
 
 
-Open the application file
+Download the folder
 
 
 
@@ -118,8 +117,10 @@ B) If you want the Unity project files
 
 
 
-Install these models(link) and place them in the project(ch10 in the player folder and ch15 in the zombie folder)
+Open the "Unity Project" link
 
+
+Download the folder
 
 
 Open Unity (recommended version: 6 or newer)
@@ -134,21 +135,17 @@ Select "Add project from disk" and select "Unity Project" folder
 
 
 
-\- saving best time from the best try(next to wave count)
-
-\- main menu music and button sounds
-
-\- different sound handling for shotguns
-
-\- walking and sprinting sound effects
-
-\- zombie hit and zombie die sounds
-
-\- weapon switching sounds
-
-\- better zombies(animation, hit and die inprovements)
-
-\- player hit by zombie effect + sound
+* saving best time from the best try(next to wave count)
+* main menu music and button sounds
+* different sound handling for shotguns
+* walking and sprinting sound effects
+* zombie hit and zombie die sounds
+* weapon switching sounds
+* better zombies(animation, hit and die inprovements)
+* player hit by zombie effect + sound
+* set up all the loaded weapons
+* add pause and leave menu in game
+* volume controll
 
 
 
@@ -185,6 +182,4 @@ UI \& Audio
 
 
 📚 Learning Resources
-
-
 
